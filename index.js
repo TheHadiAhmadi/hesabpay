@@ -76,7 +76,7 @@ app.post("/payments/create", async (req, res) => {
                 { 
                     "name": description, 
                     "price": parseFloat(amount),
-                    "quantity": 1
+                    "id": 1
                 }
             ],
             // In a real app, email should come from user input
@@ -97,7 +97,7 @@ app.post("/payments/create", async (req, res) => {
         });
 
         const data = await response.json();
-        console.log("HesabPay Response:", data);
+        console.log("HesabPay Response:", JSON.stringify(data));
 
         if (data.url) {
             res.json({ success: true, payment_url: data.url });

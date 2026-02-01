@@ -79,10 +79,9 @@ app.post("/payments/create", async (req, res) => {
                     "id": 1
                 }
             ],
-            // In a real app, email should come from user input
             "email": "boss@example.com", 
-            "redirect_success_url": `https://hesabpay.hadiahmadi.dev/payments/callback/success?order_id=${orderId}`,
-            "redirect_failure_url": `https://hesabpay.hadiahmadi.dev/payments/callback/failure?order_id=${orderId}`
+            "redirect_success_url": `${DOMAIN}/payments/callback/success?order_id=${orderId}`,
+            "redirect_failure_url": `${DOMAIN}/payments/callback/failure?order_id=${orderId}`
         };
 
         // Call HesabPay API

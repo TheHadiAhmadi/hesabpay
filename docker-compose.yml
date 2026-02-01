@@ -1,0 +1,14 @@
+services:
+
+  hesabpay:
+    build: ./
+    container_name: hesabpay-app
+    restart: always
+    volumes:
+      - ./data:/app/data
+    networks:
+      - traefik-global
+
+networks:
+  traefik-global:
+    external: true

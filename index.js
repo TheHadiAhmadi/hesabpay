@@ -80,8 +80,8 @@ app.post("/payments/create", async (req, res) => {
                 }
             ],
             "email": "boss@example.com", 
-            "redirect_success_url": `${DOMAIN}/payments/callback/success?order_id=${orderId}`,
-            "redirect_failure_url": `${DOMAIN}/payments/callback/failure?order_id=${orderId}`
+            "redirect_success_url": `${process.env.DOMAIN}/payments/callback/success?order_id=${orderId}`,
+            "redirect_failure_url": `${process.env.DOMAIN}/payments/callback/failure?order_id=${orderId}`
         };
 
         // Call HesabPay API
